@@ -89,7 +89,7 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <h1 className="App-title">React Stopwatch</h1>
+        <h1 className="App-title">Stopwatch Application</h1>
         <h3>Please enter a time in minutes and seconds</h3>
         <Clock
           minutes={this.state.minutes}
@@ -110,14 +110,14 @@ class App extends Component {
           {
             this.state.started === false
             ?
-              <Button onClick={() => this.changeMinutesAndSeconds()}>Start!</Button>
-            : <button type="button" className="btn btn-default" onClick={() => this.setState({minutes: 0, seconds: 0, started: false})}><span className="glyphicon glyphicon-stop"></span></button>
+              <Button className="start-button" onClick={() => this.changeMinutesAndSeconds()}>Start!</Button>
+            : <button type="button" className="btn btn-default input-button" onClick={() => this.setState({minutes: 0, seconds: 0, started: false})}><span className="glyphicon glyphicon-stop"></span></button>
 
           }
           {
             this.state.started === true
               ?
-                <Button onClick={() => this.togglePause()}>
+                <Button className="input-button" onClick={() => this.togglePause()}>
                   {
                     this.state.paused === true
                     ? <span>&#9654;</span>
