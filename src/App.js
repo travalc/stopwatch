@@ -13,11 +13,12 @@ class App extends Component {
       enteredSeconds: 0,
       isCounting: true,
       paused: false,
+      started: false
     }
   }
 
   changeMinutesAndSeconds() {
-    this.setState({paused: false});
+    this.setState({paused: false, started: true});
     if (this.state.enteredSeconds < 60 && this.state.enteredMinutes < 60){
       const minutes = this.state.enteredMinutes;
       const seconds = this.state.enteredSeconds;
@@ -106,14 +107,27 @@ class App extends Component {
             className="Deadline-input"
             onChange={event => this.setState({enteredSeconds:event.target.value})}
           />
-          <Button onClick={() => this.changeMinutesAndSeconds()}>Start!</Button>
-          <Button onClick={() => this.togglePause()}>
-            {
-              this.state.paused === true
-              ? <span>&#9654;</span>
-              : <span>||</span>
-            }
-          </Button>
+          {
+            this.state.started === false
+            ?
+              <Button onClick={() => this.changeMinutesAndSeconds()}>Start!</Button>
+            : <button type="button" className="btn btn-default" onClick={() => this.setState({minutes: 0, seconds: 0, started: false})}><span className="glyphicon glyphicon-stop"></span></button>
+
+          }
+          {
+            this.state.started === true
+              ?
+                <Button onClick={() => this.togglePause()}>
+                  {
+                    this.state.paused === true
+                    ? <span>&#9654;</span>
+                    : <span>||</span>
+                  }
+                </Button>
+              :
+                <div></div>
+          }
+
         </Form>
       </div>
     )
