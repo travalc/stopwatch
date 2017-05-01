@@ -1,0 +1,70 @@
+$smartphone-max-width: 450px;
+$tablet-max-width: 775px;
+$desktop-min-width: 776px;
+$large-min-width: 1300px;
+
+/* Media Queries */
+@mixin smartphone {
+  @media (max-width: #{$smartphone-max-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$smartphone-max-width + 1px}) and (max-width: #{$tablet-max-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-min-width}) {
+    @content;
+  }
+}
+
+@mixin tabletAndDesktop {
+  @media (min-width:#{$smartphone-max-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin largeScreen {
+  @media (min-width: $large-min-width) {
+    @content;
+  }
+}
+
+body {
+  background-color: #460a6b;
+  color: white;
+}
+
+//App component
+
+.App {
+  text-align: center;
+  font-size: 35px;
+  margin-top: 20%;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+}
+
+.App-title {
+  font-size: 50px;
+}
+
+.Clock-minutes, .Clock-seconds {
+  display: inline;
+  margin: 0px;
+}
+.Deadline-input {
+  font-size: 25px;
+  margin: 5px;
+}
+
+//Clock component
+.Clock {
+  font-size: 120px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+}

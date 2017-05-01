@@ -1,18 +1,28 @@
+/* Media Queries */
+body {
+  background-color: #460a6b;
+  color: white; }
+
 .App {
   text-align: center;
   font-size: 35px;
   margin-top: 20%;
-}
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5); }
 
 .App-title {
-  font-size: 50px;
-}
+  font-size: 50px; }
 
 .Clock-minutes, .Clock-seconds {
   display: inline;
-  margin: 0px;
-}
+  margin: 0px; }
+
 .Deadline-input {
   font-size: 25px;
-  margin: 5px;
-}
+  margin: 5px; }
+
+.Clock {
+  font-size: 120px;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+
+/*# sourceMappingURL=App.css.map */

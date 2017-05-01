@@ -8,7 +8,7 @@ class Clock extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Clock">
         <span className="Clock-minutes">{this.leading0(this.props.minutes)}</span>
         <span className="Clock-seconds">:{this.leading0(this.props.seconds)}</span>
       </div>
